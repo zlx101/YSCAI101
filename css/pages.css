@@ -14,9 +14,10 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 15% 20%, rgba(223, 135, 88, 0.14), transparent 22%),
-    radial-gradient(circle at 82% 18%, rgba(191, 156, 121, 0.14), transparent 20%),
-    linear-gradient(180deg, rgba(255, 252, 247, 0.72), rgba(247, 241, 232, 0));
+    radial-gradient(circle at 82% 14%, rgba(206, 66, 39, 0.18), transparent 10%),
+    radial-gradient(circle at 78% 12%, rgba(239, 186, 98, 0.24), transparent 18%),
+    radial-gradient(circle at 14% 64%, rgba(55, 101, 146, 0.08), transparent 18%),
+    linear-gradient(180deg, rgba(255, 250, 239, 0.8), rgba(244, 237, 226, 0));
   pointer-events: none;
 }
 
@@ -67,9 +68,11 @@
 .page-intro-card {
   padding: 28px;
   border-radius: 28px;
-  background: linear-gradient(180deg, rgba(255, 252, 247, 0.92), rgba(250, 244, 237, 0.88));
-  border: 1px solid rgba(78, 46, 29, 0.12);
-  box-shadow: 0 22px 60px rgba(83, 53, 37, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.86), rgba(246, 239, 230, 0.9)),
+    radial-gradient(circle at top right, rgba(239, 193, 109, 0.12), transparent 32%);
+  border: 1px solid rgba(91, 63, 41, 0.12);
+  box-shadow: 0 22px 60px rgba(83, 53, 37, 0.1);
 }
 
 .page-profile-avatar {
@@ -168,8 +171,8 @@
 .focus-sheet {
   padding: 24px 26px;
   border-radius: 24px;
-  background: rgba(255, 252, 247, 0.76);
-  border: 1px solid rgba(78, 46, 29, 0.1);
+  background: linear-gradient(180deg, rgba(255, 250, 242, 0.72), rgba(246, 239, 230, 0.86));
+  border: 1px solid rgba(91, 63, 41, 0.1);
 }
 
 .focus-sheet-label {
@@ -200,8 +203,8 @@
   gap: 24px;
   padding: 24px 26px;
   border-radius: 24px;
-  background: rgba(255, 252, 247, 0.76);
-  border: 1px solid rgba(78, 46, 29, 0.1);
+  background: linear-gradient(180deg, rgba(255, 250, 242, 0.72), rgba(246, 239, 230, 0.88));
+  border: 1px solid rgba(91, 63, 41, 0.1);
 }
 
 .editor-timeline-year {
@@ -256,8 +259,10 @@
 .editor-article {
   padding: 28px;
   border-radius: 24px;
-  background: rgba(255, 252, 247, 0.8);
-  border: 1px solid rgba(78, 46, 29, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 251, 243, 0.8), rgba(246, 239, 230, 0.92)),
+    radial-gradient(circle at top right, rgba(239, 191, 102, 0.1), transparent 28%);
+  border: 1px solid rgba(91, 63, 41, 0.1);
 }
 
 .editor-article-meta {
@@ -312,8 +317,10 @@
 .resume-block {
   padding: 28px;
   border-radius: 24px;
-  background: rgba(255, 252, 247, 0.8);
-  border: 1px solid rgba(78, 46, 29, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.8), rgba(246, 239, 230, 0.92)),
+    radial-gradient(circle at top right, rgba(239, 191, 102, 0.08), transparent 30%);
+  border: 1px solid rgba(91, 63, 41, 0.1);
 }
 
 .contact-sheet h2 {
@@ -470,8 +477,8 @@
 .capability-card {
   padding: 20px;
   border-radius: 20px;
-  background: rgba(255, 252, 247, 0.72);
-  border: 1px solid rgba(78, 46, 29, 0.08);
+  background: linear-gradient(180deg, rgba(255, 251, 243, 0.7), rgba(246, 239, 230, 0.9));
+  border: 1px solid rgba(91, 63, 41, 0.08);
 }
 
 .capability-card h3 {
@@ -536,8 +543,10 @@
 
 .post-cover,
 .post-content .img-placeholder {
-  border: 1px solid rgba(78, 46, 29, 0.1);
-  background: rgba(255, 252, 247, 0.72);
+  border: 1px solid rgba(91, 63, 41, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.7), rgba(246, 239, 230, 0.9)),
+    radial-gradient(circle at top right, rgba(208, 68, 39, 0.12), transparent 16%);
   color: var(--text-secondary);
 }
 
@@ -608,8 +617,8 @@
   gap: 4px;
   padding: 16px 18px;
   border-radius: 18px;
-  background: rgba(255, 252, 247, 0.82);
-  border: 1px solid rgba(78, 46, 29, 0.1);
+  background: linear-gradient(180deg, rgba(255, 251, 243, 0.82), rgba(246, 239, 230, 0.92));
+  border: 1px solid rgba(91, 63, 41, 0.1);
 }
 
 .post-nav .label {
