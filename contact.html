@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>联系我 - 成云杉YSC</title>
-  <meta name="description" content="联系成云杉YSC - 合作咨询、项目邀请或随便聊聊">
+  <title>联系 - 成云杉 YSC</title>
+  <meta name="description" content="联系成云杉 YSC：项目合作、内容交流、AI 工作流与副业实践咨询。">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -13,12 +13,10 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/pages.css">
 </head>
-<body>
-
-  <!-- Navigation -->
-  <nav class="navbar">
+<body class="homepage">
+  <nav class="navbar scrolled">
     <div class="container">
-      <a href="index.html" class="nav-logo">成云杉YSC</a>
+      <a href="index.html" class="nav-logo">成云杉 YSC</a>
       <div class="nav-links">
         <a href="index.html">首页</a>
         <a href="blog.html">博客</a>
@@ -34,7 +32,6 @@
     </div>
   </nav>
 
-  <!-- 移动端菜单 -->
   <div class="mobile-menu">
     <a href="index.html">首页</a>
     <a href="blog.html">博客</a>
@@ -43,133 +40,96 @@
     <a href="contact.html">联系</a>
   </div>
 
-  <!-- Page Header -->
-  <header class="page-header">
-    <div class="container">
-      <h1 class="gradient-text">联系我</h1>
-      <p>无论是项目合作、工作机会还是随便聊聊，都欢迎联系我</p>
-    </div>
-  </header>
-
-  <!-- Contact Content -->
-  <main class="container">
-    <div class="contact-grid">
-
-      <!-- Left: Form -->
-      <div class="card contact-form-wrapper fade-in">
-        <h2 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 24px;">发送消息</h2>
-        <form class="contact-form" id="contactForm">
-          <div class="form-group">
-            <label for="name">姓名 *</label>
-            <input type="text" id="name" name="name" placeholder="你的名字" required>
-          </div>
-          <div class="form-group">
-            <label for="email">邮箱 *</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-          </div>
-          <div class="form-group">
-            <label for="subject">主题</label>
-            <select id="subject" name="subject">
-              <option value="">请选择主题…</option>
-              <option value="合作咨询">合作咨询</option>
-              <option value="工作机会">工作机会</option>
-              <option value="项目邀请">项目邀请</option>
-              <option value="技术交流">技术交流</option>
-              <option value="其他">其他</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">消息 *</label>
-            <textarea id="message" name="message" placeholder="写下你想说的……" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="align-self: flex-start;">发送消息 ✉️</button>
-        </form>
-        <div class="form-success" id="formSuccess">
-          ✅ 消息已发送成功！（演示模式，实际需要后端支持）<br>我会尽快回复你。
-        </div>
+  <main>
+    <section class="page-intro page-intro-contact">
+      <div class="container page-intro-single">
+        <p class="page-kicker fade-in">Contact</p>
+        <h1 class="fade-in">如果你想聊副业、内容、AI 或项目合作，可以直接联系我</h1>
+        <p class="page-summary fade-in">无论是合作咨询、内容交流，还是你正在做的一人公司项目，欢迎发消息给我。只要问题具体，我通常都愿意认真回复。</p>
       </div>
+    </section>
 
-      <!-- Right: Info -->
-      <div class="contact-info-wrapper fade-in">
+    <section class="section" style="padding-top: 34px;">
+      <div class="container contact-editor-grid">
+        <div class="contact-sheet fade-in">
+          <h2>给我发一条消息</h2>
+          <p class="contact-sheet-intro">这个表单现在是演示模式，但页面结构已经准备好了。你后面可以接上 Formspree、Cloudflare Forms 或你自己的后端。</p>
 
-        <!-- Email & Basic -->
-        <div class="card contact-info-card">
-          <h3><span class="icon">📬</span> 联系方式</h3>
-          <div class="contact-item">
-            <div class="item-icon">📧</div>
-            <div>
-              <div style="font-weight: 500; color: var(--text-primary);">邮箱</div>
-              <div>hello@yscai101.com</div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">姓名</label>
+              <input type="text" id="name" name="name" placeholder="你的名字" required>
             </div>
-          </div>
-          <div class="contact-item">
-            <div class="item-icon">💬</div>
-            <div>
-              <div style="font-weight: 500; color: var(--text-primary);">微信</div>
-              <div>ysc-creator（添加请注明来意）</div>
+            <div class="form-group">
+              <label for="email">邮箱</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required>
             </div>
-          </div>
-          <div class="contact-item">
-            <div class="item-icon">⏰</div>
-            <div>
-              <div style="font-weight: 500; color: var(--text-primary);">回复时间</div>
-              <div>通常 24 小时内回复</div>
+            <div class="form-group">
+              <label for="subject">主题</label>
+              <select id="subject" name="subject">
+                <option value="">请选择一个主题</option>
+                <option value="合作咨询">合作咨询</option>
+                <option value="内容交流">内容交流</option>
+                <option value="项目邀请">项目邀请</option>
+                <option value="AI 工作流">AI 工作流</option>
+                <option value="其他">其他</option>
+              </select>
             </div>
+            <div class="form-group">
+              <label for="message">你想聊什么</label>
+              <textarea id="message" name="message" placeholder="把你的问题、项目或想法写在这里" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              发送消息
+              <span class="btn-icon">→</span>
+            </button>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            已收到这条演示消息。后续只要接上真实表单服务，这里就可以直接投入使用。
           </div>
         </div>
 
-        <!-- Social Media -->
-        <div class="card contact-info-card">
-          <h3><span class="icon">🌐</span> 社交媒体</h3>
-          <div class="social-links">
-            <a href="#" class="social-link" target="_blank" rel="noopener">
-              <span class="s-icon">💬</span> 微信
-            </a>
-            <a href="#" class="social-link" target="_blank" rel="noopener">
-              <span class="s-icon">📖</span> 知乎
-            </a>
-            <a href="#" class="social-link" target="_blank" rel="noopener">
-              <span class="s-icon">📕</span> 小红书
-            </a>
-            <a href="#" class="social-link" target="_blank" rel="noopener">
-              <span class="s-icon">🐦</span> X / Twitter
-            </a>
-            <a href="#" class="social-link" target="_blank" rel="noopener">
-              <span class="s-icon">🐱</span> GitHub
-            </a>
-            <a href="#" class="social-link" target="_blank" rel="noopener">
-              <span class="s-icon">📺</span> B站
-            </a>
-          </div>
-        </div>
+        <aside class="contact-side-stack fade-in">
+          <article class="contact-card">
+            <span class="contact-card-label">Direct</span>
+            <h3>最直接的联系方法</h3>
+            <div class="contact-detail">
+              <strong>邮箱</strong>
+              <span>hello@yscai101.com</span>
+            </div>
+            <div class="contact-detail">
+              <strong>微信</strong>
+              <span>ysc-creator（添加时注明来意）</span>
+            </div>
+            <div class="contact-detail">
+              <strong>回复时间</strong>
+              <span>通常 24 小时内</span>
+            </div>
+          </article>
 
-        <!-- Location -->
-        <div class="card contact-info-card">
-          <h3><span class="icon">📍</span> 所在地</h3>
-          <p class="location-note">
-            目前坐标：中国 · 深圳<br>
-            偶尔出没于：北京 / 上海 / 杭州<br>
-            远程协作无障碍，时区友好 🌏
-          </p>
-          <div class="map-placeholder">
-            🗺️ 地图占位 — 后续可嵌入高德/Google 地图
-          </div>
-        </div>
+          <article class="contact-card">
+            <span class="contact-card-label">Location</span>
+            <h3>我目前在深圳，也支持远程合作</h3>
+            <p>你如果在做内容、AI 工具、知识产品或个人品牌项目，线上沟通完全没有问题。重点是问题具体，我们更容易快速进入状态。</p>
+          </article>
 
+          <article class="contact-card">
+            <span class="contact-card-label">Start Here</span>
+            <h3>如果你还不确定怎么开口</h3>
+            <p>可以直接告诉我这三件事：你在做什么、你现在卡在哪里、你希望获得什么帮助。这样我能更快判断怎么回复你。</p>
+          </article>
+        </aside>
       </div>
-
-    </div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="container">
       <div class="footer-grid footer-grid-home">
         <div class="footer-brand">
-          <div class="footer-logo">成云杉YSC</div>
-          <p class="footer-desc">
-            记录副业实践、AI 工具使用、内容创作和一人公司系统，
-            把长期积累变成可复利的资产。
-          </p>
+          <div class="footer-logo">成云杉 YSC</div>
+          <p class="footer-desc">记录 AI 工具、内容创作、副业实践与一人公司的长期过程，把经验沉淀成可复用的系统。</p>
         </div>
         <div class="footer-nav">
           <h4>入口</h4>
@@ -179,41 +139,38 @@
           <a href="about.html">关于</a>
         </div>
         <div class="footer-nav">
-          <h4>项目</h4>
+          <h4>方向</h4>
           <a href="works.html">AI 工具站</a>
-          <a href="works.html">作品合集</a>
+          <a href="works.html">内容系统</a>
           <a href="resume.html">简历</a>
-          <a href="contact.html">资源导航</a>
+          <a href="contact.html">资源入口</a>
         </div>
         <div class="footer-nav">
           <h4>联系</h4>
-          <a href="mailto:hello@yscai101.com">邮箱：hello@yscai101.com</a>
+          <a href="mailto:hello@yscai101.com">hello@yscai101.com</a>
           <a href="contact.html">中国，深圳</a>
-          <a href="contact.html">免费领副业资料包</a>
+          <a href="contact.html">免费资料包</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 成云杉YSC. 保留所有权利。</span>
-        <span><a href="about.html">隐私政策</a> · <a href="contact.html">服务条款</a></span>
+        <span>© 2026 成云杉 YSC. 保留所有权利。</span>
+        <span><a href="about.html">隐私政策</a> / <a href="contact.html">服务条款</a></span>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
   <script>
-    // Contact Form (demo only - no backend)
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('contactForm');
       const success = document.getElementById('formSuccess');
 
       form.addEventListener('submit', (e) => {
         e.preventDefault();
-        // Demo: just show success message
         form.style.display = 'none';
         success.classList.add('show');
       });
     });
   </script>
-
 </body>
 </html>
