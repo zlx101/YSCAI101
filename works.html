@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="成云杉YSC 项目页 - 展示已上线的工具、网站与内容系统项目。">
+  <title>项目 - 成云杉YSC</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <div class="page-loader">
+    <div class="loader-content">
+      <div class="loader-logo">YSC</div>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <nav class="navbar scrolled">
+    <div class="container">
+      <a href="index.html" class="nav-logo">成云杉YSC</a>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="works.html" class="active">项目</a>
+        <a href="blog.html">博客</a>
+        <a href="about.html">关于</a>
+        <a href="contact.html">联系</a>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="index.html">首页</a>
+    <a href="works.html">项目</a>
+    <a href="blog.html">博客</a>
+    <a href="about.html">关于</a>
+    <a href="contact.html">联系</a>
+  </div>
+
+  <header class="page-header">
+    <div class="container">
+      <span class="section-label fade-in">Portfolio</span>
+      <h1 class="section-title fade-in" style="margin-top: 12px; font-size: clamp(2rem, 5vw, 3rem);">作品合集</h1>
+      <p class="section-desc fade-in">优先展示已在线项目，后续持续补充更多工具和产品。</p>
+    </div>
+  </header>
+
+  <section class="section works-page-grid">
+    <div class="container">
+      <div class="filter-tags fade-in">
+        <button class="filter-tag active" data-filter="all">全部</button>
+        <button class="filter-tag" data-filter="tool">AI 工具</button>
+        <button class="filter-tag" data-filter="content">内容系统</button>
+        <button class="filter-tag" data-filter="brand">个人品牌</button>
+        <button class="filter-tag" data-filter="product">产品实验</button>
+      </div>
+
+      <div class="works-grid">
+        <article class="work-card" data-category="tool">
+          <div class="work-card-image">🧰</div>
+          <div class="work-card-body">
+            <div class="work-card-tags">
+              <span class="work-card-tag">工具站</span>
+              <span class="work-card-tag">SEO 导向</span>
+            </div>
+            <h3 class="work-card-title">AI 工具站</h3>
+            <p class="work-card-desc">重构高频任务入口与工具目录，帮助用户更快找到可直接使用的 AI 工具。</p>
+          </div>
+          <div class="work-card-footer">
+            <span>工具站 / 多入口</span>
+            <span class="work-card-link">网站访问 →</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="content">
+          <div class="work-card-image">✍️</div>
+          <div class="work-card-body">
+            <div class="work-card-tags">
+              <span class="work-card-tag">AI 内容处理</span>
+              <span class="work-card-tag">长文结构化</span>
+            </div>
+            <h3 class="work-card-title">Formatter 排版引擎</h3>
+            <p class="work-card-desc">把长文自动拆分、重组并输出适配公众号的排版结构，降低二次加工成本。</p>
+          </div>
+          <div class="work-card-footer">
+            <span>内容交付提效</span>
+            <span class="work-card-link">网站访问 →</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="product">
+          <div class="work-card-image">🧩</div>
+          <div class="work-card-body">
+            <div class="work-card-tags">
+              <span class="work-card-tag">游戏化产品</span>
+              <span class="work-card-tag">互动体验</span>
+            </div>
+            <h3 class="work-card-title">WordClimbr</h3>
+            <p class="work-card-desc">面向英语学习用户的单词挑战产品，包含规则引导、每日题目和结果反馈机制。</p>
+          </div>
+          <div class="work-card-footer">
+            <span>Daily Puzzle</span>
+            <span class="work-card-link">网站访问 →</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="brand">
+          <div class="work-card-image">🧠</div>
+          <div class="work-card-body">
+            <div class="work-card-tags">
+              <span class="work-card-tag">个人品牌</span>
+              <span class="work-card-tag">内容策略</span>
+            </div>
+            <h3 class="work-card-title">一人公司内容系统</h3>
+            <p class="work-card-desc">围绕写作、认知与产品化构建内容闭环，让流量与转化进入可持续复利状态。</p>
+          </div>
+          <div class="work-card-footer">
+            <span>长期主义</span>
+            <span class="work-card-link">查看详情 →</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="content">
+          <div class="work-card-image">📚</div>
+          <div class="work-card-body">
+            <div class="work-card-tags">
+              <span class="work-card-tag">资源导航</span>
+              <span class="work-card-tag">知识库</span>
+            </div>
+            <h3 class="work-card-title">Open 资源导航</h3>
+            <p class="work-card-desc">整理副业、写作、AI 工具和增长相关资源，做成可持续更新的导航入口。</p>
+          </div>
+          <div class="work-card-footer">
+            <span>资源整合</span>
+            <span class="work-card-link">查看详情 →</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="brand">
+          <div class="work-card-image">📈</div>
+          <div class="work-card-body">
+            <div class="work-card-tags">
+              <span class="work-card-tag">增长系统</span>
+              <span class="work-card-tag">转化漏斗</span>
+            </div>
+            <h3 class="work-card-title">免费资料包转化页</h3>
+            <p class="work-card-desc">将流量动作、表单引导和后续沟通流程串联成一套可复用转化路径。</p>
+          </div>
+          <div class="work-card-footer">
+            <span>内容商业化</span>
+            <span class="work-card-link">查看详情 →</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid footer-grid-home">
+        <div class="footer-brand">
+          <div class="footer-logo">成云杉YSC</div>
+          <p class="footer-desc">
+            记录副业实践、AI 工具使用、内容创作和一人公司系统，
+            把长期积累变成可复利的资产。
+          </p>
+        </div>
+        <div class="footer-nav">
+          <h4>入口</h4>
+          <a href="index.html">首页</a>
+          <a href="blog.html">博客</a>
+          <a href="works.html">项目</a>
+          <a href="about.html">关于</a>
+        </div>
+        <div class="footer-nav">
+          <h4>项目</h4>
+          <a href="works.html">AI 工具站</a>
+          <a href="works.html">作品合集</a>
+          <a href="resume.html">简历</a>
+          <a href="contact.html">资源导航</a>
+        </div>
+        <div class="footer-nav">
+          <h4>联系</h4>
+          <a href="mailto:hello@yscai101.com">邮箱：hello@yscai101.com</a>
+          <a href="contact.html">中国，深圳</a>
+          <a href="contact.html">免费领副业资料包</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 成云杉YSC. 保留所有权利。</span>
+        <span><a href="about.html">隐私政策</a> · <a href="contact.html">服务条款</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="返回顶部">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
