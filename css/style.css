@@ -3185,13 +3185,11 @@ body.homepage::after {
   width: 66px;
   height: 66px;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
+  display: block;
+  object-fit: cover;
+  object-position: center;
   background: linear-gradient(135deg, rgba(191, 93, 64, 0.12), rgba(214, 173, 102, 0.1));
   border: 1px solid rgba(191, 93, 64, 0.16);
-  color: var(--accent);
-  font-weight: 700;
-  letter-spacing: 0.08em;
 }
 
 .profile-row h2,
@@ -3217,8 +3215,13 @@ body.homepage::after {
 
 .profile-copy {
   display: grid;
-  gap: 12px;
-  line-height: 1.78;
+  gap: 8px;
+  line-height: 1.65;
+}
+
+.profile-copy p {
+  margin: 0;
+  text-align: left;
 }
 
 .focus-card h3 {
