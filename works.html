@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="成云杉 YSC 的项目页，展示 AI 工具、内容系统和产品实验。">
+  <meta name="description" content="成云杉 YSC 的项目页，展示 FileDev、MXMY-秘心秘语、SayType 等当前 AI 产品实践。">
   <title>项目 - 成云杉 YSC</title>
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -51,9 +51,9 @@
     <section class="page-intro page-intro-works">
       <div class="container page-intro-single">
         <p class="page-kicker fade-in">Selected Projects</p>
-        <h1 class="fade-in">我持续在做的，不只是页面，而是一整套可复用的成果</h1>
+        <h1 class="fade-in">我现在主要在推进 FileDev、MXMY 和 SayType</h1>
         <p class="page-summary fade-in">
-          这些项目围绕 AI 工具、内容系统、个人品牌和产品实验展开。比起数量，我更在意它们能不能真正进入长期工作流。
+          这些项目分别指向产品复盘、私人日记和语音输入。这个页面先把当前方向梳理清楚，后续会继续补充真实链接、截图、版本记录和复盘文章。
         </p>
       </div>
     </section>
@@ -62,106 +62,58 @@
       <div class="container">
         <div class="editor-filter-bar fade-in">
           <button class="filter-tag active" data-filter="all">全部</button>
-          <button class="filter-tag" data-filter="tool">AI 工具</button>
-          <button class="filter-tag" data-filter="content">内容系统</button>
-          <button class="filter-tag" data-filter="brand">个人品牌</button>
+          <button class="filter-tag" data-filter="review">产品复盘</button>
+          <button class="filter-tag" data-filter="diary">私密日记</button>
+          <button class="filter-tag" data-filter="voice">语音输入</button>
           <button class="filter-tag" data-filter="product">产品实验</button>
         </div>
 
         <div class="works-grid editor-works-grid">
-          <article class="work-card" data-category="tool">
-            <div class="work-card-image">AI</div>
+          <article class="work-card" data-category="review,product">
+            <div class="work-card-image">FD</div>
             <div class="work-card-body">
               <div class="work-card-tags">
-                <span class="work-card-tag">工具站</span>
-                <span class="work-card-tag">SEO 入口</span>
+                <span class="work-card-tag">产品复盘</span>
+                <span class="work-card-tag">版本时间线</span>
               </div>
-              <h3 class="work-card-title">AI 工具站</h3>
-              <p class="work-card-desc">重构高频任务入口与工具目录，帮助用户更快找到可以直接用的 AI 工具。</p>
+              <h3 class="work-card-title">FileDev</h3>
+              <p class="work-card-desc">产品进化复盘系统，记录一个产品从想法、版本、决策、反馈到复盘的全过程，核心口号是“存下来，跑起来”。</p>
             </div>
             <div class="work-card-footer">
-              <span>工具入口 / 导航</span>
-              <span class="work-card-link">网站访问 →</span>
+              <span>产品复盘 / 迭代记录</span>
+              <span class="work-card-link">持续迭代中 →</span>
             </div>
           </article>
 
-          <article class="work-card" data-category="content">
-            <div class="work-card-image">TXT</div>
+          <article class="work-card" data-category="diary,product">
+            <div class="work-card-image">MX</div>
             <div class="work-card-body">
               <div class="work-card-tags">
-                <span class="work-card-tag">内容系统</span>
-                <span class="work-card-tag">AI 排版</span>
+                <span class="work-card-tag">私人日记</span>
+                <span class="work-card-tag">本地优先</span>
               </div>
-              <h3 class="work-card-title">Formatter 排版引擎</h3>
-              <p class="work-card-desc">把长文自动拆分、重组并输出适配不同平台的结构，降低二次加工成本。</p>
+              <h3 class="work-card-title">MXMY-秘心秘语</h3>
+              <p class="work-card-desc">私人日记本 App，已完成 Flutter/Android MVP：本地日记持久化、时间线、标签筛选、心情天气、图片音频、锁屏与紧急擦除。</p>
             </div>
             <div class="work-card-footer">
-              <span>内容交付提效</span>
-              <span class="work-card-link">查看详情 →</span>
+              <span>日记 / 心情 / 安全</span>
+              <span class="work-card-link">持续迭代中 →</span>
             </div>
           </article>
 
-          <article class="work-card" data-category="product">
-            <div class="work-card-image">PLAY</div>
+          <article class="work-card" data-category="voice,product">
+            <div class="work-card-image">ST</div>
             <div class="work-card-body">
               <div class="work-card-tags">
-                <span class="work-card-tag">产品实验</span>
-                <span class="work-card-tag">互动体验</span>
+                <span class="work-card-tag">语音输入</span>
+                <span class="work-card-tag">桌面工具</span>
               </div>
-              <h3 class="work-card-title">WordClimbr</h3>
-              <p class="work-card-desc">一个面向英语学习用户的单词挑战产品，包含每日题目、规则引导和结果反馈机制。</p>
+              <h3 class="work-card-title">SayType</h3>
+              <p class="work-card-desc">Windows 优先的桌面语音输入 MVP：按 F8 录音，火山引擎语音识别，DeepSeek 整理文本，再写入剪贴板并自动粘贴。</p>
             </div>
             <div class="work-card-footer">
-              <span>Daily Puzzle</span>
-              <span class="work-card-link">网站访问 →</span>
-            </div>
-          </article>
-
-          <article class="work-card" data-category="brand">
-            <div class="work-card-image">SYS</div>
-            <div class="work-card-body">
-              <div class="work-card-tags">
-                <span class="work-card-tag">个人品牌</span>
-                <span class="work-card-tag">内容策略</span>
-              </div>
-              <h3 class="work-card-title">一人公司内容系统</h3>
-              <p class="work-card-desc">围绕写作、认知与产品化构建内容闭环，让流量与转化进入可持续复利状态。</p>
-            </div>
-            <div class="work-card-footer">
-              <span>长期主义</span>
-              <span class="work-card-link">查看详情 →</span>
-            </div>
-          </article>
-
-          <article class="work-card" data-category="content">
-            <div class="work-card-image">DIR</div>
-            <div class="work-card-body">
-              <div class="work-card-tags">
-                <span class="work-card-tag">资源导航</span>
-                <span class="work-card-tag">知识库</span>
-              </div>
-              <h3 class="work-card-title">Open 资源导航</h3>
-              <p class="work-card-desc">整理副业、写作、AI 工具和增长相关资源，做成可以持续更新的导航入口。</p>
-            </div>
-            <div class="work-card-footer">
-              <span>资源整合</span>
-              <span class="work-card-link">查看详情 →</span>
-            </div>
-          </article>
-
-          <article class="work-card" data-category="brand">
-            <div class="work-card-image">FUN</div>
-            <div class="work-card-body">
-              <div class="work-card-tags">
-                <span class="work-card-tag">转化系统</span>
-                <span class="work-card-tag">资料包</span>
-              </div>
-              <h3 class="work-card-title">免费资料包转化页</h3>
-              <p class="work-card-desc">把流量动作、表单引导和后续沟通流程串联成一套更稳定的内容商业路径。</p>
-            </div>
-            <div class="work-card-footer">
-              <span>内容商业化</span>
-              <span class="work-card-link">查看详情 →</span>
+              <span>录音 / 转写 / 粘贴</span>
+              <span class="work-card-link">持续迭代中 →</span>
             </div>
           </article>
         </div>
@@ -185,9 +137,9 @@
         </div>
         <div class="footer-nav">
           <h4>方向</h4>
-          <a href="works.html">AI 工具站</a>
-          <a href="works.html">内容系统</a>
-          <a href="resume.html">简历</a>
+          <a href="works.html">FileDev</a>
+          <a href="works.html">MXMY</a>
+          <a href="works.html">SayType</a>
           <a href="contact.html">资源入口</a>
         </div>
         <div class="footer-nav">
