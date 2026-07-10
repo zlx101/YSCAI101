@@ -262,6 +262,92 @@
     });
   }
 
+  /* ---------- 首页实时状态 ---------- */
+  function initLiveConsole() {
+    const signal = document.getElementById('consoleSignal');
+    if (!signal) return;
+
+    const messages = [
+      '正在整理 FileDev 的下一轮反馈',
+      '正在开发 MXMY 与 SayType',
+      '正在搭建 AI 内容工作流',
+      '开放具体项目与定制合作'
+    ];
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let index = 0;
+    window.setInterval(() => {
+      signal.classList.add('switching');
+      window.setTimeout(() => {
+        index = (index + 1) % messages.length;
+        signal.textContent = messages[index];
+        signal.classList.remove('switching');
+      }, 220);
+    }, 3200);
+  }
+
+  /* ---------- 全站快捷入口 ---------- */
+  function initQuickAccess() {
+    const trigger = document.createElement('button');
+    trigger.className = 'quick-access-trigger';
+    trigger.type = 'button';
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-controls', 'quickAccessPanel');
+    trigger.innerHTML = '<span>⌘</span><strong>找入口</strong>';
+
+    const overlay = document.createElement('div');
+    overlay.className = 'quick-access-overlay';
+    overlay.id = 'quickAccessPanel';
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.innerHTML = `
+      <div class="quick-access-panel" role="dialog" aria-modal="true" aria-labelledby="quickAccessTitle">
+        <div class="quick-access-head">
+          <div><span>QUICK ACCESS</span><h2 id="quickAccessTitle">你想找什么？</h2></div>
+          <button type="button" class="quick-access-close" aria-label="关闭快捷入口">×</button>
+        </div>
+        <div class="quick-access-links">
+          <a href="https://filedev.dev" target="_blank" rel="noopener"><span>01</span><strong>使用 FileDev</strong><em>网站与产品入口 ↗</em></a>
+          <a href="/works.html"><span>02</span><strong>查看产品</strong><em>FileDev / MXMY / SayType →</em></a>
+          <a href="/contact.html#services"><span>03</span><strong>找 AI 定制服务</strong><em>Skill / 知识库 / 工作流 →</em></a>
+          <a href="https://t.zsxq.com/VqloN" target="_blank" rel="noopener"><span>04</span><strong>加入免费社区</strong><em>实践记录与交流 ↗</em></a>
+          <a href="/about.html"><span>05</span><strong>了解成云杉</strong><em>经历与个人业务 →</em></a>
+          <a href="/contact.html"><span>06</span><strong>联系合作</strong><em>微信 / 邮箱 →</em></a>
+        </div>
+      </div>
+    `;
+
+    document.body.append(trigger, overlay);
+
+    const panel = overlay.querySelector('.quick-access-panel');
+    const closeButton = overlay.querySelector('.quick-access-close');
+
+    const open = () => {
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden', 'false');
+      trigger.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('quick-access-open');
+      closeButton.focus();
+    };
+
+    const close = () => {
+      overlay.classList.remove('open');
+      overlay.setAttribute('aria-hidden', 'true');
+      trigger.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('quick-access-open');
+      trigger.focus();
+    };
+
+    trigger.addEventListener('click', open);
+    closeButton.addEventListener('click', close);
+    overlay.addEventListener('click', (event) => {
+      if (!panel.contains(event.target)) close();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && overlay.classList.contains('open')) close();
+    });
+  }
+
   /* ---------- 初始化所有模块 ---------- */
   function init() {
     initLoader();
@@ -274,6 +360,8 @@
     initSmoothScroll();
     initCountUp();
     initCursorGlow();
+    initLiveConsole();
+    initQuickAccess();
   }
 
   // DOM 就绪后初始化
