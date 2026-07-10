@@ -3,174 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>联系 - 成云杉 YSC</title>
-  <meta name="description" content="联系成云杉 YSC：项目合作、内容交流、AI 工作流与副业实践咨询。">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/pages.css">
+  <meta name="description" content="联系成云杉：AI 小产品开发、Skill 定制、AI 知识库、内容工作流与商务合作。">
+  <title>服务与联系 - 成云杉</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"><link rel="shortcut icon" href="favicon.ico"><link rel="manifest" href="site.webmanifest"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/pages.css">
 </head>
 <body class="homepage">
-  <nav class="navbar scrolled">
-    <div class="container">
-      <a href="index.html" class="nav-logo">成云杉 YSC</a>
-      <div class="nav-links">
-        <a href="index.html">首页</a>
-        <a href="blog.html">博客</a>
-        <a href="works.html">项目</a>
-        <a href="about.html">关于</a>
-        <a href="contact.html" class="active">联系</a>
-      </div>
-      <button class="nav-toggle" aria-label="菜单">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
-
-  <div class="mobile-menu">
-    <a href="index.html">首页</a>
-    <a href="blog.html">博客</a>
-    <a href="works.html">项目</a>
-    <a href="about.html">关于</a>
-    <a href="contact.html">联系</a>
-  </div>
+  <nav class="navbar scrolled"><div class="container"><a href="index.html" class="nav-logo">成云杉 YSC</a><div class="nav-links"><a href="index.html">首页</a><a href="blog.html">写作</a><a href="works.html">项目</a><a href="about.html">关于</a><a href="contact.html" class="active">联系</a></div><button class="nav-toggle" aria-label="菜单"><span></span><span></span><span></span></button></div></nav>
+  <div class="mobile-menu"><a href="index.html">首页</a><a href="blog.html">写作</a><a href="works.html">项目</a><a href="about.html">关于</a><a href="contact.html">联系</a></div>
 
   <main>
     <section class="page-intro page-intro-contact">
-      <div class="container page-intro-single">
-        <p class="page-kicker fade-in">Contact</p>
-        <h1 class="fade-in">如果你想聊副业、内容、AI 或项目合作，可以直接联系我</h1>
-        <p class="page-summary fade-in">无论是合作咨询、内容交流，还是你正在做的一人公司项目，欢迎发消息给我。只要问题具体，我通常都愿意认真回复。</p>
+      <div class="container page-intro-grid">
+        <div class="page-intro-copy fade-in"><p class="page-kicker">SERVICE · COMMUNITY · CONTACT</p><h1>先把问题说具体，我们再谈合作。</h1><p class="page-summary">请直接说明你在做什么、遇到什么问题、预算范围和希望得到的结果。我会判断目前是否适合做，不合适也会直接说明。</p></div>
+        <aside class="contact-direct fade-in-right"><span class="contact-card-label">DIRECT CONTACT</span><img src="assets/wechat-avatar.jpg" alt="成云杉头像"><h2>成云杉</h2><p>添加微信请备注“公众号”，再简单介绍你是谁、在做什么、想交流什么。</p><div class="direct-line"><span>微信</span><strong>3087465343</strong></div><div class="direct-line"><span>邮箱</span><a href="mailto:3087465343@qq.com">3087465343@qq.com</a></div><div class="direct-line"><span>所在地</span><strong>天津 · 支持远程</strong></div></aside>
       </div>
     </section>
 
-    <section class="section" style="padding-top: 34px;">
-      <div class="container contact-editor-grid">
-        <div class="contact-sheet fade-in">
-          <h2>给我发一条消息</h2>
-          <p class="contact-sheet-intro">这个表单现在是演示模式，但页面结构已经准备好了。你后面可以接上 Formspree、Cloudflare Forms 或你自己的后端。</p>
-
-          <form class="contact-form" id="contactForm">
-            <div class="form-group">
-              <label for="name">姓名</label>
-              <input type="text" id="name" name="name" placeholder="你的名字" required>
-            </div>
-            <div class="form-group">
-              <label for="email">邮箱</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required>
-            </div>
-            <div class="form-group">
-              <label for="subject">主题</label>
-              <select id="subject" name="subject">
-                <option value="">请选择一个主题</option>
-                <option value="合作咨询">合作咨询</option>
-                <option value="内容交流">内容交流</option>
-                <option value="项目邀请">项目邀请</option>
-                <option value="AI 工作流">AI 工作流</option>
-                <option value="其他">其他</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">你想聊什么</label>
-              <textarea id="message" name="message" placeholder="把你的问题、项目或想法写在这里" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">
-              发送消息
-              <span class="btn-icon">→</span>
-            </button>
-          </form>
-
-          <div class="form-success" id="formSuccess">
-            已收到这条演示消息。后续只要接上真实表单服务，这里就可以直接投入使用。
-          </div>
+    <section class="section" id="services">
+      <div class="container">
+        <div class="lab-section-head fade-in"><p class="section-label">SERVICES</p><h2>目前开放的合作方向。</h2><p>服务围绕我正在真实使用和持续迭代的能力展开，不承诺不熟悉的领域。</p></div>
+        <div class="service-grid">
+          <article class="service-card fade-in"><span>01</span><h3>AI 小产品与工具</h3><p>网站、小程序、浏览器插件和本地工具的需求梳理、原型与开发协作。</p><strong>适合：已有明确场景与目标用户</strong></article>
+          <article class="service-card fade-in delay-1"><span>02</span><h3>Agent Skill 定制</h3><p>把重复业务流程整理成可调用、可复用的 Skill，减少机械操作和沟通成本。</p><strong>适合：已有稳定重复流程</strong></article>
+          <article class="service-card fade-in delay-2"><span>03</span><h3>AI 知识库搭建</h3><p>围绕个人或小团队资料，梳理内容结构、检索入口和实际使用方式。</p><strong>适合：资料多但无法高效利用</strong></article>
+          <article class="service-card fade-in delay-3"><span>04</span><h3>内容工作流搭建</h3><p>结合 Codex、Claude Code、Obsidian、飞书知识库、Agent 和自动化流程，搭建内容系统。</p><strong>已累计服务 10 位客户</strong></article>
+          <article class="service-card fade-in"><span>05</span><h3>内容与产品推广</h3><p>接受合适的软件、课程、社群及内容产品合作，优先考虑有复利价值的产品。</p><strong>需要提前体验与判断</strong></article>
+          <article class="service-card service-card-dark fade-in delay-1"><span>START</span><h3>发起一次合作</h3><p>邮件里请写清：问题、预算、希望得到的结果和时间要求。</p><a href="mailto:3087465343@qq.com">发送合作邮件 →</a></article>
         </div>
+      </div>
+    </section>
 
-        <aside class="contact-side-stack fade-in">
-          <article class="contact-card">
-            <span class="contact-card-label">Direct</span>
-            <h3>最直接的联系方法</h3>
-            <div class="contact-detail">
-              <strong>邮箱</strong>
-              <span>hello@yscai101.com</span>
-            </div>
-            <div class="contact-detail">
-              <strong>微信</strong>
-              <span>ysc-creator（添加时注明来意）</span>
-            </div>
-            <div class="contact-detail">
-              <strong>回复时间</strong>
-              <span>通常 24 小时内</span>
-            </div>
-          </article>
+    <section class="section community-free-section">
+      <div class="container">
+        <div class="lab-section-head fade-in"><p class="section-label">FREE ENTRY</p><h2>不谈合作，也可以先从免费交流开始。</h2></div>
+        <div class="free-entry-grid">
+          <a href="https://t.zsxq.com/VqloN" target="_blank" rel="noopener" class="free-entry-card fade-in"><span>免费知识星球</span><h3>成云杉 · AI 编程出海变现</h3><p>实践记录、搞钱、自媒体、日常思考、AI 工具与项目进展。目前 390 人，自然增长。</p><strong>进入星球 ↗</strong></a>
+          <a href="https://qm.qq.com/q/emthaUeQus" target="_blank" rel="noopener" class="free-entry-card fade-in delay-1"><span>交流群 01</span><h3>AI 编程学习交流群</h3><p>分享 AI 编程学习、产品实践、动态和阶段性思考。</p><strong>加入 QQ 群 ↗</strong></a>
+          <a href="https://qm.qq.com/q/geqlJ7vsOY" target="_blank" rel="noopener" class="free-entry-card fade-in delay-2"><span>交流群 02</span><h3>跨境电商学习交流群</h3><p>围绕跨境电商的学习、信息与实践进行交流。</p><strong>加入 QQ 群 ↗</strong></a>
+        </div>
+      </div>
+    </section>
 
-          <article class="contact-card">
-            <span class="contact-card-label">Location</span>
-            <h3>我目前在深圳，也支持远程合作</h3>
-            <p>你如果在做内容、AI 工具、知识产品或个人品牌项目，线上沟通完全没有问题。重点是问题具体，我们更容易快速进入状态。</p>
-          </article>
-
-          <article class="contact-card">
-            <span class="contact-card-label">Start Here</span>
-            <h3>如果你还不确定怎么开口</h3>
-            <p>可以直接告诉我这三件事：你在做什么、你现在卡在哪里、你希望获得什么帮助。这样我能更快判断怎么回复你。</p>
-          </article>
-        </aside>
+    <section class="section community-recommend-section">
+      <div class="container">
+        <div class="lab-section-head fade-in"><p class="section-label">PAID COMMUNITIES</p><h2>我关注或推荐的付费社群。</h2><p>我目前没有运营综合型付费社群。下面是基于个人体验和用途整理的入口，请按自己的需求判断；其中 AI 出海赚钱案例库由成云杉运营，处于早期阶段。</p></div>
+        <div class="community-card-grid">
+          <a class="community-card fade-in" href="https://t.zsxq.com/uFgH1" target="_blank" rel="noopener"><img src="assets/community-ai-breakthrough.png" alt="AI破局俱乐部介绍卡"><div><span>推荐社群</span><h3>AI 破局俱乐部</h3><p>更看重行动营、线下组局和沙龙等高行动密度活动。</p><strong>查看入口 ↗</strong></div></a>
+          <a class="community-card fade-in delay-1" href="https://t.zsxq.com/QkMGX" target="_blank" rel="noopener"><img src="assets/community-ido.png" alt="IDO老徐陪你副业避坑介绍卡"><div><span>推荐社群</span><h3>IDO老徐 · 陪你副业避坑</h3><p>适合正在尝试或已经开始做副业、希望少踩坑的人。</p><strong>查看入口 ↗</strong></div></a>
+          <a class="community-card fade-in" href="https://t.zsxq.com/RYNmR" target="_blank" rel="noopener"><img src="assets/community-caoz.png" alt="caoz的成长陪伴星球介绍卡"><div><span>推荐社群</span><h3>caoz 的成长陪伴星球</h3><p>曹政老师的个人成长星球，覆盖互联网经验与长期判断。</p><strong>查看入口 ↗</strong></div></a>
+          <a class="community-card community-card-owned fade-in delay-1" href="https://t.zsxq.com/3jux9" target="_blank" rel="noopener"><img src="assets/community-ai-overseas.png" alt="AI出海赚钱案例库介绍卡"><div><span>成云杉出品 · 早期阶段</span><h3>AI 出海赚钱案例库</h3><p>聚焦 AI 出海案例拆解、视野与避坑，内容正在持续建设。</p><strong>查看入口 ↗</strong></div></a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid footer-grid-home">
-        <div class="footer-brand">
-          <div class="footer-logo">成云杉 YSC</div>
-          <p class="footer-desc">记录 AI 工具、内容创作、副业实践与一人公司的长期过程，把经验沉淀成可复用的系统。</p>
-        </div>
-        <div class="footer-nav">
-          <h4>入口</h4>
-          <a href="index.html">首页</a>
-          <a href="blog.html">博客</a>
-          <a href="works.html">项目</a>
-          <a href="about.html">关于</a>
-        </div>
-        <div class="footer-nav">
-          <h4>方向</h4>
-          <a href="works.html">FileDev</a>
-          <a href="works.html">MXMY</a>
-          <a href="works.html">SayType</a>
-          <a href="contact.html">资源入口</a>
-        </div>
-        <div class="footer-nav">
-          <h4>联系</h4>
-          <a href="mailto:hello@yscai101.com">hello@yscai101.com</a>
-          <a href="contact.html">中国，深圳</a>
-          <a href="contact.html">免费资料包</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 成云杉 YSC. 保留所有权利。</span>
-        <span><a href="about.html">隐私政策</a> / <a href="contact.html">服务条款</a></span>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('contactForm');
-      const success = document.getElementById('formSuccess');
-
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        form.style.display = 'none';
-        success.classList.add('show');
-      });
-    });
-  </script>
+  <footer class="footer"><div class="container"><div class="footer-grid footer-grid-home"><div class="footer-brand"><div class="footer-logo">成云杉 YSC</div><p class="footer-desc">一个文科生用 AI 做产品、搭工作流、写真实实践的公开记录。</p></div><div class="footer-nav"><h4>导航</h4><a href="index.html">首页</a><a href="blog.html">写作</a><a href="works.html">项目</a><a href="about.html">关于</a></div><div class="footer-nav"><h4>服务</h4><a href="#services">产品开发</a><a href="#services">Skill 定制</a><a href="#services">知识库与工作流</a></div><div class="footer-nav"><h4>联系</h4><a href="mailto:3087465343@qq.com">3087465343@qq.com</a><span>微信：3087465343</span><span>天津 · 支持远程</span></div></div><div class="footer-bottom"><span>© 2026 成云杉 YSC</span><span>合作前请先说明具体需求</span></div></div></footer>
+  <button class="back-to-top" aria-label="返回顶部">↑</button><script src="js/main.js"></script>
 </body>
 </html>
