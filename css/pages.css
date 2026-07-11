@@ -2083,3 +2083,143 @@ body.quick-access-open {
   max-width: 13ch;
   color: #2f493d;
 }
+
+/* Product identity and layered notes */
+.project-logo {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(45, 95, 86, 0.16);
+  border-radius: 12px;
+  background: #edf4ee;
+}
+
+.project-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lab-project-card:nth-child(2) .project-logo img,
+.lab-project-card:nth-child(3) .project-logo img {
+  object-fit: contain;
+}
+
+.lab-project-card:nth-child(2) .project-logo {
+  background: #e8f1ea;
+}
+
+.lab-project-card:nth-child(3) .project-logo {
+  background: #eaf3ff;
+}
+
+.product-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 10px 0 18px;
+}
+
+.product-title > img {
+  flex: 0 0 auto;
+  width: 72px;
+  height: 72px;
+  border: 1px solid rgba(45, 95, 86, 0.15);
+  border-radius: 14px;
+  background: #edf4ee;
+  object-fit: contain;
+}
+
+.product-title > img[src*="filedev-logo"] {
+  object-fit: cover;
+}
+
+.product-title .section-label,
+.product-title h2 {
+  margin: 0;
+}
+
+.product-title h2 {
+  margin-top: 4px;
+}
+
+.product-visual > img {
+  width: 132px;
+  height: 132px;
+  object-fit: contain;
+}
+
+.product-visual-mx {
+  color: #174e36;
+  background: linear-gradient(145deg, #edf5ef, #d8e8dd);
+}
+
+.product-visual-st {
+  color: #14509d;
+  background: linear-gradient(145deg, #eef6ff, #dceaff);
+}
+
+.product-visual-mx strong,
+.product-visual-st strong {
+  color: currentColor;
+}
+
+.beliefs-prologue {
+  max-width: 650px;
+  margin: -8px 0 26px;
+  padding-left: 18px;
+  border-left: 3px solid #3f735b;
+  color: var(--text-secondary);
+  font-family: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.belief-list li {
+  grid-template-columns: 46px minmax(170px, 0.62fr) minmax(0, 1.38fr);
+  gap: 16px;
+  align-items: baseline;
+  padding: 22px 0;
+}
+
+.belief-list strong {
+  color: #2f5b47;
+  font-family: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.belief-list p {
+  font-size: 0.96rem;
+  line-height: 1.85;
+}
+
+@media (max-width: 760px) {
+  .product-title > img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .product-visual > img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .belief-list li {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 6px 12px;
+  }
+
+  .belief-list strong,
+  .belief-list p {
+    grid-column: 2;
+  }
+
+  .belief-list span {
+    grid-row: 1 / 3;
+  }
+}
