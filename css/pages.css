@@ -1126,6 +1126,97 @@ body.quick-access-open {
   }
 }
 
+/* Hero console refinement */
+.lab-console {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(48, 42, 38, 0.98), rgba(31, 30, 29, 0.99));
+}
+
+.console-profile {
+  margin: 42px 0 22px;
+}
+
+.console-profile img {
+  width: 78px;
+  height: 78px;
+  border-radius: 8px;
+}
+
+.console-lines {
+  gap: 0;
+  margin-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.console-lines p {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 14px;
+  align-items: baseline;
+  padding: 15px 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  background: transparent;
+}
+
+.console-lines span {
+  min-width: 0;
+}
+
+.console-build {
+  margin-top: 16px;
+  padding: 14px 4px 15px;
+  border-width: 1px 0;
+  background: transparent;
+}
+
+.console-manifesto {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 150px;
+  padding: 28px 4px 6px;
+}
+
+.console-manifesto > span,
+.console-manifesto > small {
+  color: rgba(247, 239, 231, 0.42);
+  font-family: 'SF Mono', 'Cascadia Code', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+.console-manifesto strong {
+  max-width: 12ch;
+  margin: 10px 0 14px;
+  color: #f7efe7;
+  font-family: Georgia, 'Noto Serif SC', serif;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.28;
+}
+
+@media (max-width: 700px) {
+  .lab-console {
+    border-radius: 18px;
+  }
+
+  .console-lines p {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .console-manifesto {
+    min-height: 180px;
+  }
+}
+
 /* 2026 content architecture upgrade */
 .fade-in,
 .fade-in-left,
