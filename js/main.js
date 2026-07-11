@@ -348,6 +348,103 @@
     });
   }
 
+  /* ---------- 微信联系卡 ---------- */
+  function initWechatHoverCards() {
+    const wechatText = '微信：3087465343';
+    const directNumber = '3087465343';
+    const textNodes = [];
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const value = node.nodeValue || '';
+      const parent = node.parentElement;
+      if (!parent || parent.closest('script, style, .wechat-hover')) continue;
+
+      const hasFullLabel = value.includes(wechatText);
+      const isDirectWechatNumber =
+        value.trim() === directNumber && parent.closest('.direct-line');
+
+      if (hasFullLabel || isDirectWechatNumber) {
+        textNodes.push({ node, label: hasFullLabel ? wechatText : directNumber });
+      }
+    }
+
+    if (textNodes.length === 0) return;
+
+    const cards = [];
+
+    const createCard = (label, index) => {
+      const wrapper = document.createElement('span');
+      const tooltipId = `wechatContactCard${index}`;
+      wrapper.className = 'wechat-hover';
+      wrapper.tabIndex = 0;
+      wrapper.setAttribute('role', 'button');
+      wrapper.setAttribute('aria-expanded', 'false');
+      wrapper.setAttribute('aria-describedby', tooltipId);
+      wrapper.append(document.createTextNode(label));
+
+      const popover = document.createElement('span');
+      popover.className = 'wechat-popover';
+      popover.id = tooltipId;
+      popover.setAttribute('role', 'tooltip');
+
+      const image = document.createElement('img');
+      image.src = 'assets/wechat-contact-card.png';
+      image.alt = '成云杉微信联系卡与二维码';
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      popover.append(image);
+      wrapper.append(popover);
+      cards.push(wrapper);
+      return wrapper;
+    };
+
+    textNodes.forEach(({ node, label }, index) => {
+      const value = node.nodeValue || '';
+      const position = value.indexOf(label);
+      const fragment = document.createDocumentFragment();
+
+      if (position > 0) fragment.append(document.createTextNode(value.slice(0, position)));
+      fragment.append(createCard(label, index));
+      if (position + label.length < value.length) {
+        fragment.append(document.createTextNode(value.slice(position + label.length)));
+      }
+      node.replaceWith(fragment);
+    });
+
+    const closeAll = (except) => {
+      cards.forEach((card) => {
+        if (card === except) return;
+        card.classList.remove('active');
+        card.setAttribute('aria-expanded', 'false');
+      });
+    };
+
+    cards.forEach((card) => {
+      const toggle = (event) => {
+        event.stopPropagation();
+        const willOpen = !card.classList.contains('active');
+        closeAll(card);
+        card.classList.toggle('active', willOpen);
+        card.setAttribute('aria-expanded', String(willOpen));
+      };
+
+      card.addEventListener('click', toggle);
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggle(event);
+        }
+      });
+    });
+
+    document.addEventListener('click', () => closeAll());
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeAll();
+    });
+  }
+
   /* ---------- 初始化所有模块 ---------- */
   function init() {
     initLoader();
@@ -361,6 +458,7 @@
     initCountUp();
     initCursorGlow();
     initLiveConsole();
+    initWechatHoverCards();
     initQuickAccess();
   }
 
