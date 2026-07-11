@@ -4050,3 +4050,240 @@ body.homepage::after {
     margin-top: 34px;
   }
 }
+
+/* Outcome-first service summary, placed directly after the homepage hero. */
+.help-section {
+  position: relative;
+  padding: 82px 0 54px;
+  overflow: hidden;
+  border-top: 1px solid rgba(58, 105, 82, 0.14);
+  border-bottom: 1px solid rgba(58, 105, 82, 0.14);
+  background:
+    linear-gradient(135deg, rgba(45, 95, 86, 0.065), transparent 48%),
+    rgba(250, 246, 239, 0.72);
+}
+
+.help-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 34%;
+  height: 100%;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(58, 105, 82, 0.16) 1px, transparent 1.2px);
+  background-size: 20px 20px;
+  mask-image: linear-gradient(90deg, transparent, #000);
+  opacity: 0.55;
+}
+
+.help-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.help-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  gap: clamp(36px, 7vw, 96px);
+  align-items: end;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(78, 46, 29, 0.16);
+}
+
+.help-head h2 {
+  max-width: 18ch;
+  margin-top: 10px;
+  font-family: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+  font-size: clamp(2.7rem, 3.8vw, 3.35rem);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.help-head > p {
+  max-width: 500px;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-left: 1px solid rgba(78, 46, 29, 0.14);
+}
+
+.help-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 500px;
+  padding: 30px;
+  border-right: 1px solid rgba(78, 46, 29, 0.14);
+  border-bottom: 1px solid rgba(78, 46, 29, 0.14);
+  background: rgba(255, 252, 247, 0.72);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.help-card:hover {
+  background: rgba(255, 253, 249, 0.96);
+  transform: translateY(-3px);
+}
+
+.help-index {
+  color: #3b7057;
+  font-family: 'SF Mono', 'Cascadia Code', monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.help-card h3 {
+  min-height: 2.7em;
+  margin: 30px 0 18px;
+  font-family: Georgia, 'Noto Serif SC', 'Songti SC', serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.help-situation {
+  min-height: 106px;
+  color: var(--text-secondary);
+  line-height: 1.85;
+}
+
+.help-situation b {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.help-delivery {
+  min-height: 150px;
+  margin: 24px 0;
+  padding: 18px 0 18px 18px;
+  border-left: 3px solid #3b7057;
+}
+
+.help-delivery span,
+.help-proof span,
+.help-next span {
+  display: block;
+  margin-bottom: 7px;
+  color: #3b7057;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.help-delivery p {
+  color: var(--text-primary);
+  line-height: 1.8;
+}
+
+.help-proof {
+  margin-bottom: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(78, 46, 29, 0.12);
+}
+
+.help-proof strong {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.help-card > a {
+  margin-top: auto;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.help-card > a:hover,
+.help-card > a:focus-visible {
+  color: #315f49;
+}
+
+.help-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 24px 0 0;
+}
+
+.help-next p {
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.help-next span {
+  display: inline;
+  margin: 0 12px 0 0;
+}
+
+.help-next > a {
+  flex: 0 0 auto;
+  padding: 12px 18px;
+  border: 1px solid rgba(58, 105, 82, 0.34);
+  color: #315f49;
+  font-weight: 800;
+  background: rgba(255, 252, 247, 0.74);
+}
+
+.help-next > a:hover,
+.help-next > a:focus-visible {
+  border-color: #3b7057;
+  background: #3b7057;
+  color: #fffdf7;
+}
+
+@media (max-width: 900px) {
+  .help-head {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .help-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .help-card {
+    min-height: auto;
+  }
+
+  .help-card h3,
+  .help-situation,
+  .help-delivery {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .help-section {
+    padding: 62px 0 42px;
+  }
+
+  .help-head h2 {
+    font-size: clamp(2.35rem, 11vw, 3.25rem);
+  }
+
+  .help-card {
+    padding: 24px 20px;
+  }
+
+  .help-next {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .help-next > a {
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .help-card {
+    transition: none;
+  }
+}
