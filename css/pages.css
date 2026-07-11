@@ -1504,6 +1504,21 @@ body.quick-access-open {
   line-height: 1.75;
 }
 
+.footer-bottom-stack {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.footer-bottom-stack a {
+  color: #3f735b;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(63, 115, 91, 0.34);
+  text-underline-offset: 3px;
+}
+
 .product-case-list {
   display: grid;
   gap: 22px;
