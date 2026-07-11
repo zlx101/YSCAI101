@@ -2527,7 +2527,10 @@ body.community-preview-open {
   text-wrap: balance;
 }
 
-.page-intro-works .page-summary,
+.page-intro-works .page-summary {
+  max-width: 980px;
+}
+
 .page-intro-blog .page-summary {
   max-width: 780px;
 }
