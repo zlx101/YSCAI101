@@ -445,6 +445,81 @@
     });
   }
 
+  /* ---------- 社群二维码原图预览 ---------- */
+  function initCommunityImagePreview() {
+    const thumbnails = document.querySelectorAll('.community-card > img');
+    if (thumbnails.length === 0) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'community-preview-overlay';
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.innerHTML = `
+      <div class="community-preview-panel" role="dialog" aria-modal="true" aria-label="社群二维码原图预览">
+        <button type="button" class="community-preview-close" aria-label="关闭原图预览">×</button>
+        <img src="" alt="">
+      </div>
+    `;
+    document.body.append(overlay);
+
+    const previewImage = overlay.querySelector('img');
+    const closeButton = overlay.querySelector('.community-preview-close');
+    let pinned = false;
+    let hoverTimer;
+
+    const show = (thumbnail, shouldPin) => {
+      previewImage.src = thumbnail.currentSrc || thumbnail.src;
+      previewImage.alt = thumbnail.alt || '社群二维码原图';
+      pinned = shouldPin;
+      overlay.classList.toggle('pinned', pinned);
+      overlay.classList.add('open');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.classList.toggle('community-preview-open', pinned);
+      if (pinned) closeButton.focus();
+    };
+
+    const hide = (force = false) => {
+      if (pinned && !force) return;
+      window.clearTimeout(hoverTimer);
+      pinned = false;
+      overlay.classList.remove('open', 'pinned');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('community-preview-open');
+    };
+
+    thumbnails.forEach((thumbnail) => {
+      thumbnail.tabIndex = 0;
+      thumbnail.setAttribute('role', 'button');
+      thumbnail.setAttribute('aria-label', `${thumbnail.alt || '社群图片'}，查看可扫码原图`);
+      thumbnail.title = '悬停或点击查看可扫码原图';
+
+      thumbnail.addEventListener('mouseenter', () => {
+        if (!window.matchMedia('(hover: hover)').matches) return;
+        hoverTimer = window.setTimeout(() => show(thumbnail, false), 180);
+      });
+      thumbnail.addEventListener('mouseleave', () => hide());
+      thumbnail.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        show(thumbnail, true);
+      });
+      thumbnail.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          event.stopPropagation();
+          show(thumbnail, true);
+        }
+      });
+    });
+
+    closeButton.addEventListener('click', () => hide(true));
+    overlay.addEventListener('click', (event) => {
+      if (event.target === overlay) hide(true);
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && overlay.classList.contains('open')) hide(true);
+    });
+  }
+
   /* ---------- 初始化所有模块 ---------- */
   function init() {
     initLoader();
@@ -459,6 +534,7 @@
     initCursorGlow();
     initLiveConsole();
     initWechatHoverCards();
+    initCommunityImagePreview();
     initQuickAccess();
   }
 

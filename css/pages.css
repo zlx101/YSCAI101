@@ -2357,3 +2357,118 @@ span.wechat-hover.active > .wechat-popover {
     transition: none;
   }
 }
+
+/* Full-resolution community card preview keeps embedded QR codes scannable. */
+.community-card > img {
+  cursor: zoom-in;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.community-card > img:hover,
+.community-card > img:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(47, 91, 70, 0.2);
+  outline: 2px solid rgba(63, 115, 91, 0.38);
+  outline-offset: 3px;
+}
+
+.community-preview-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(37, 33, 29, 0.18);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.2s ease, visibility 0.2s ease, background 0.2s ease;
+}
+
+.community-preview-overlay.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.community-preview-overlay.pinned {
+  pointer-events: auto;
+  background: rgba(37, 33, 29, 0.62);
+  backdrop-filter: blur(10px);
+}
+
+.community-preview-panel {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(720px, calc(100vw - 48px));
+  max-height: calc(100vh - 48px);
+  padding: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(63, 115, 91, 0.34);
+  border-radius: 8px;
+  background: #edf9f6;
+  box-shadow: 0 28px 90px rgba(31, 27, 24, 0.32);
+  transform: translateY(10px) scale(0.985);
+  transition: transform 0.2s ease;
+}
+
+.community-preview-overlay.open .community-preview-panel {
+  transform: translateY(0) scale(1);
+}
+
+.community-preview-panel img {
+  display: block;
+  width: 100%;
+  max-height: calc(100vh - 64px);
+  object-fit: contain;
+}
+
+.community-preview-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+  display: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: rgba(35, 79, 59, 0.9);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.community-preview-overlay.pinned .community-preview-close {
+  display: grid;
+}
+
+body.community-preview-open {
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .community-preview-overlay {
+    padding: 14px;
+  }
+
+  .community-preview-panel {
+    width: calc(100vw - 28px);
+    max-height: calc(100vh - 28px);
+  }
+
+  .community-preview-panel img {
+    max-height: calc(100vh - 44px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .community-card > img,
+  .community-preview-overlay,
+  .community-preview-panel {
+    transition: none;
+  }
+}
