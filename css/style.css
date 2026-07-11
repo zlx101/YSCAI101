@@ -222,6 +222,9 @@ button {
 }
 
 .nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -230,6 +233,18 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   flex-shrink: 0;
+}
+
+.nav-logo::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border: 2px solid rgba(255, 252, 246, 0.96);
+  border-radius: 50%;
+  background: #f8f3ea url('../favicon.png') center / cover no-repeat;
+  box-shadow: 0 0 0 1px rgba(58, 105, 82, 0.28), 0 5px 14px rgba(75, 53, 37, 0.1);
 }
 
 .nav-links {
@@ -1977,6 +1992,16 @@ body.homepage .hero-avatar {
 
   .mobile-menu {
     display: block;
+  }
+
+  .nav-logo {
+    gap: 9px;
+  }
+
+  .nav-logo::before {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
   }
 
   /* Hero */
