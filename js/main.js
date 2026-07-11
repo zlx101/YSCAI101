@@ -289,6 +289,7 @@
 
   /* ---------- 全站快捷入口 ---------- */
   function initQuickAccess() {
+    const firstVisitKey = 'yscai101_quick_access_seen_v1';
     const trigger = document.createElement('button');
     trigger.className = 'quick-access-trigger';
     trigger.type = 'button';
@@ -322,6 +323,22 @@
     const panel = overlay.querySelector('.quick-access-panel');
     const closeButton = overlay.querySelector('.quick-access-close');
 
+    const hasSeenQuickAccess = () => {
+      try {
+        return window.localStorage.getItem(firstVisitKey) === '1';
+      } catch (error) {
+        return document.cookie.split('; ').includes(`${firstVisitKey}=1`);
+      }
+    };
+
+    const rememberQuickAccess = () => {
+      try {
+        window.localStorage.setItem(firstVisitKey, '1');
+      } catch (error) {
+        document.cookie = `${firstVisitKey}=1; max-age=31536000; path=/; SameSite=Lax`;
+      }
+    };
+
     const open = () => {
       overlay.classList.add('open');
       overlay.setAttribute('aria-hidden', 'false');
@@ -338,7 +355,10 @@
       trigger.focus();
     };
 
-    trigger.addEventListener('click', open);
+    trigger.addEventListener('click', () => {
+      rememberQuickAccess();
+      open();
+    });
     closeButton.addEventListener('click', close);
     overlay.addEventListener('click', (event) => {
       if (!panel.contains(event.target)) close();
@@ -346,6 +366,22 @@
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && overlay.classList.contains('open')) close();
     });
+
+    if (!hasSeenQuickAccess()) {
+      const showFirstVisitAccess = () => {
+        window.setTimeout(() => {
+          if (hasSeenQuickAccess()) return;
+          rememberQuickAccess();
+          open();
+        }, 850);
+      };
+
+      if (document.readyState === 'complete') {
+        showFirstVisitAccess();
+      } else {
+        window.addEventListener('load', showFirstVisitAccess, { once: true });
+      }
+    }
   }
 
   /* ---------- 微信联系卡 ---------- */
