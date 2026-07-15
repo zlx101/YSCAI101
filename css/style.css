@@ -152,6 +152,38 @@ body.homepage > :not(.ambient-bg) {
   mix-blend-mode: multiply;
 }
 
+.ambient-mountain {
+  position: absolute;
+  left: -7vw;
+  right: -7vw;
+  bottom: -9vh;
+  height: min(62vh, 620px);
+  pointer-events: none;
+  background-image:
+    linear-gradient(180deg, rgba(247, 241, 231, 0) 0%, rgba(247, 241, 231, 0.26) 30%, rgba(247, 241, 231, 0.9) 92%),
+    url('../assets/ysc-mountain-bg.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  filter: saturate(0.82) contrast(0.92);
+  mix-blend-mode: multiply;
+  opacity: 0.28;
+  transform-origin: center bottom;
+  will-change: transform, opacity;
+}
+
+.ambient-mountain-back {
+  bottom: 7vh;
+  opacity: 0.18;
+  transform: scale(1.08);
+  animation: mountainDriftBack 42s ease-in-out infinite alternate;
+}
+
+.ambient-mountain-front {
+  opacity: 0.26;
+  animation: mountainDriftFront 30s ease-in-out infinite alternate;
+}
+
 @keyframes ambientFlow {
   0% { transform: translate3d(-1.5%, -1%, 0) scale(1) rotate(0deg); }
   50% { transform: translate3d(1.2%, 1.6%, 0) scale(1.04) rotate(3deg); }
@@ -162,9 +194,26 @@ body.homepage > :not(.ambient-bg) {
   to { transform: translate3d(48px, 32px, 0); }
 }
 
+@keyframes mountainDriftBack {
+  0% { transform: translate3d(-1.6%, 0, 0) scale(1.08); }
+  100% { transform: translate3d(1.4%, 1.2vh, 0) scale(1.12); }
+}
+
+@keyframes mountainDriftFront {
+  0% { transform: translate3d(1.2%, 0.8vh, 0) scale(1.02); }
+  100% { transform: translate3d(-1.2%, -0.8vh, 0) scale(1.06); }
+}
+
+@keyframes footerVistaDrift {
+  0% { transform: translate3d(-1%, 0, 0) scale(1.04); }
+  100% { transform: translate3d(1%, -1vh, 0) scale(1.08); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ambient-bg::before,
-  .ambient-bg::after {
+  .ambient-bg::after,
+  .ambient-mountain,
+  .homepage .footer::after {
     animation: none;
   }
 
@@ -185,6 +234,11 @@ body.homepage > :not(.ambient-bg) {
 
   .ambient-bg canvas {
     opacity: 0.3;
+  }
+
+  .ambient-mountain {
+    height: 44vh;
+    opacity: 0.16;
   }
 }
 
@@ -2968,8 +3022,52 @@ body.homepage::after {
 }
 
 .homepage .footer {
-  background: transparent;
+  position: relative;
+  overflow: hidden;
+  min-height: 44vh;
+  display: flex;
+  align-items: flex-start;
+  background:
+    linear-gradient(180deg, rgba(247, 241, 231, 0.72), rgba(247, 241, 231, 0.82) 42%, rgba(247, 241, 231, 0.66) 100%),
+    url('../assets/ysc-mountain-bg.webp') center bottom / cover no-repeat;
   border-top: 1px solid rgba(88, 66, 47, 0.08);
+}
+
+.homepage .footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(63, 115, 91, 0.1), transparent 24%),
+    radial-gradient(circle at 82% 18%, rgba(199, 105, 62, 0.1), transparent 26%),
+    linear-gradient(90deg, rgba(247, 241, 231, 0.68), rgba(247, 241, 231, 0.22), rgba(247, 241, 231, 0.68));
+  backdrop-filter: blur(1px);
+  z-index: 0;
+}
+
+.homepage .footer::after {
+  content: '';
+  position: absolute;
+  left: -8vw;
+  right: -8vw;
+  bottom: -8vh;
+  height: 78%;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(247, 241, 231, 0), rgba(247, 241, 231, 0.28) 56%, rgba(247, 241, 231, 0.62)),
+    url('../assets/ysc-mountain-bg.webp') center bottom / cover no-repeat;
+  filter: saturate(0.86) contrast(0.96);
+  mix-blend-mode: multiply;
+  opacity: 0.34;
+  z-index: 0;
+  animation: footerVistaDrift 36s ease-in-out infinite alternate;
+}
+
+.homepage .footer > .container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
 
 .homepage .footer-grid-home {
@@ -3614,7 +3712,7 @@ body.homepage::after {
   right: -6vw;
   bottom: 24px;
   z-index: -1;
-  color: rgba(66, 50, 36, 0.035);
+  color: rgba(66, 50, 36, 0.018);
   font-size: clamp(3.4rem, 8vw, 7rem);
   font-weight: 800;
   letter-spacing: 0.12em;

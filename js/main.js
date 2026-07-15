@@ -32,6 +32,7 @@
     const layer = document.createElement('div');
     layer.className = 'ambient-bg';
     layer.setAttribute('aria-hidden', 'true');
+    layer.innerHTML = '<div class="ambient-mountain ambient-mountain-back"></div><div class="ambient-mountain ambient-mountain-front"></div>';
     document.body.prepend(layer);
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
