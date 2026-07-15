@@ -268,7 +268,7 @@
     if (!signal) return;
 
     const messages = [
-      '正在整理 FileDev 的下一轮反馈',
+      'FileDev：复盘即进化',
       'MXMY：别憋着了，在这说说',
       'SayType：说话即打字，Ctrl+V',
       '正在搭建 AI 内容工作流',
