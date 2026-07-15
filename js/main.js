@@ -24,6 +24,134 @@
     }, 3000);
   }
 
+  /* ---------- 全站动态背景 ---------- */
+  function initAmbientBackground() {
+    if (!document.body.classList.contains('homepage')) return;
+    if (document.querySelector('.ambient-bg')) return;
+
+    const layer = document.createElement('div');
+    layer.className = 'ambient-bg';
+    layer.setAttribute('aria-hidden', 'true');
+    document.body.prepend(layer);
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reduceMotion.matches) return;
+
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d', { alpha: true });
+    if (!ctx) return;
+
+    layer.appendChild(canvas);
+
+    let width = 0;
+    let height = 0;
+    let dpr = 1;
+    let rafId = 0;
+    let start = performance.now();
+
+    const resize = () => {
+      dpr = Math.min(window.devicePixelRatio || 1, 1.7);
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    const drawWave = (time, index, color, alpha) => {
+      const baseY = height * (0.18 + index * 0.16);
+      const amplitude = 24 + index * 9;
+      const speed = 0.28 + index * 0.05;
+      const phase = time * speed + index * 1.7;
+
+      ctx.beginPath();
+      ctx.moveTo(-120, baseY);
+      for (let x = -120; x <= width + 120; x += 42) {
+        const y = baseY
+          + Math.sin(x * 0.006 + phase) * amplitude
+          + Math.cos(x * 0.0038 - phase * 0.8) * (amplitude * 0.48);
+        ctx.lineTo(x, y);
+      }
+      ctx.strokeStyle = color;
+      ctx.globalAlpha = alpha;
+      ctx.lineWidth = 1 + index * 0.16;
+      ctx.stroke();
+    };
+
+    const draw = (now) => {
+      const time = (now - start) / 1000;
+      ctx.clearRect(0, 0, width, height);
+
+      const glowA = ctx.createRadialGradient(
+        width * (0.22 + Math.sin(time * 0.13) * 0.05),
+        height * (0.24 + Math.cos(time * 0.11) * 0.04),
+        0,
+        width * 0.25,
+        height * 0.22,
+        Math.max(width, height) * 0.58
+      );
+      glowA.addColorStop(0, 'rgba(63, 115, 91, 0.18)');
+      glowA.addColorStop(0.58, 'rgba(63, 115, 91, 0.06)');
+      glowA.addColorStop(1, 'rgba(63, 115, 91, 0)');
+      ctx.fillStyle = glowA;
+      ctx.fillRect(0, 0, width, height);
+
+      const glowB = ctx.createRadialGradient(
+        width * (0.78 + Math.cos(time * 0.1) * 0.04),
+        height * (0.16 + Math.sin(time * 0.12) * 0.05),
+        0,
+        width * 0.8,
+        height * 0.2,
+        Math.max(width, height) * 0.52
+      );
+      glowB.addColorStop(0, 'rgba(204, 105, 64, 0.16)');
+      glowB.addColorStop(0.62, 'rgba(215, 168, 95, 0.05)');
+      glowB.addColorStop(1, 'rgba(204, 105, 64, 0)');
+      ctx.fillStyle = glowB;
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.globalCompositeOperation = 'multiply';
+      drawWave(time, 0, 'rgba(47, 104, 77, 0.2)', 0.42);
+      drawWave(time, 1, 'rgba(174, 93, 52, 0.16)', 0.34);
+      drawWave(time, 2, 'rgba(66, 93, 112, 0.13)', 0.28);
+
+      ctx.globalCompositeOperation = 'source-over';
+      const step = width < 700 ? 86 : 66;
+      for (let y = 30; y < height; y += step) {
+        for (let x = 28; x < width; x += step) {
+          const drift = Math.sin(time * 0.35 + x * 0.017 + y * 0.011);
+          const radius = 0.8 + (drift + 1) * 0.34;
+          ctx.beginPath();
+          ctx.arc(x + drift * 4, y + Math.cos(time * 0.26 + x * 0.01) * 3, radius, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(47, 104, 77, 0.13)';
+          ctx.fill();
+        }
+      }
+
+      ctx.globalAlpha = 1;
+      if (!document.hidden) rafId = window.requestAnimationFrame(draw);
+    };
+
+    const startAnimation = () => {
+      window.cancelAnimationFrame(rafId);
+      start = performance.now();
+      rafId = window.requestAnimationFrame(draw);
+    };
+
+    resize();
+    startAnimation();
+    window.addEventListener('resize', resize, { passive: true });
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        window.cancelAnimationFrame(rafId);
+      } else {
+        startAnimation();
+      }
+    });
+  }
+
   /* ---------- 导航栏滚动效果 ---------- */
   function initNavbar() {
     const navbar = document.querySelector('.navbar');
@@ -559,6 +687,7 @@
 
   /* ---------- 初始化所有模块 ---------- */
   function init() {
+    initAmbientBackground();
     initLoader();
     initNavbar();
     initMobileMenu();
