@@ -269,7 +269,8 @@
 
     const messages = [
       '正在整理 FileDev 的下一轮反馈',
-      '正在开发 MXMY 与 SayType',
+      'MXMY：别憋着了，在这说说',
+      'SayType：说话即打字，Ctrl+V',
       '正在搭建 AI 内容工作流',
       '开放具体项目与定制合作'
     ];

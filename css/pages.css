@@ -1585,6 +1585,20 @@ body.quick-access-open {
   line-height: 1.9;
 }
 
+.product-slogan {
+  width: fit-content;
+  max-width: 100%;
+  margin: -6px 0 14px;
+  padding: 9px 13px;
+  border: 1px solid rgba(63, 115, 91, 0.18);
+  border-radius: 999px;
+  background: rgba(237, 244, 238, 0.74);
+  color: #2f6a54;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
 .product-qr {
   display: grid;
   place-items: center;
