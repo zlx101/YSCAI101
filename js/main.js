@@ -296,7 +296,7 @@
     trigger.type = 'button';
     trigger.setAttribute('aria-expanded', 'false');
     trigger.setAttribute('aria-controls', 'quickAccessPanel');
-    trigger.innerHTML = '<span>⌘</span><strong>找入口</strong>';
+    trigger.innerHTML = '<span>⌘</span><strong>Call me</strong>';
 
     const overlay = document.createElement('div');
     overlay.className = 'quick-access-overlay';
