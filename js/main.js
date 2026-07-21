@@ -482,6 +482,104 @@
     });
   }
 
+  /* ---------- 页脚公众号二维码 ---------- */
+  function initOfficialAccountHover() {
+    const copyrightLines = document.querySelectorAll('.footer-bottom-stack > span:first-child');
+    if (copyrightLines.length === 0) return;
+
+    const cards = [];
+
+    const createAccountCard = (index) => {
+      const wrapper = document.createElement('span');
+      const tooltipId = `officialAccountCard${index}`;
+      wrapper.className = 'official-account-hover';
+      wrapper.tabIndex = 0;
+      wrapper.setAttribute('role', 'button');
+      wrapper.setAttribute('aria-expanded', 'false');
+      wrapper.setAttribute('aria-describedby', tooltipId);
+      wrapper.setAttribute('aria-label', '成云杉公众号');
+      wrapper.title = '成云杉公众号';
+      wrapper.append(document.createTextNode('成云杉'));
+
+      const popover = document.createElement('span');
+      popover.className = 'official-account-popover';
+      popover.id = tooltipId;
+      popover.setAttribute('role', 'tooltip');
+
+      const caption = document.createElement('span');
+      caption.className = 'official-account-caption';
+      caption.textContent = '成云杉公众号';
+
+      const image = document.createElement('img');
+      image.src = 'assets/ysc-official-account.jpg';
+      image.alt = '成云杉公众号二维码';
+      image.loading = 'lazy';
+      image.decoding = 'async';
+
+      popover.append(caption, image);
+      wrapper.append(popover);
+      cards.push(wrapper);
+      return wrapper;
+    };
+
+    copyrightLines.forEach((line, index) => {
+      if (line.querySelector('.official-account-hover')) return;
+      const target = '成云杉';
+      const walker = document.createTreeWalker(line, NodeFilter.SHOW_TEXT);
+      let nodeToReplace = null;
+
+      while (walker.nextNode()) {
+        if ((walker.currentNode.nodeValue || '').includes(target)) {
+          nodeToReplace = walker.currentNode;
+          break;
+        }
+      }
+
+      if (!nodeToReplace) return;
+      const value = nodeToReplace.nodeValue || '';
+      const position = value.indexOf(target);
+      const fragment = document.createDocumentFragment();
+
+      if (position > 0) fragment.append(document.createTextNode(value.slice(0, position)));
+      fragment.append(createAccountCard(index));
+      if (position + target.length < value.length) {
+        fragment.append(document.createTextNode(value.slice(position + target.length)));
+      }
+      nodeToReplace.replaceWith(fragment);
+    });
+
+    const closeAll = (except) => {
+      cards.forEach((card) => {
+        if (card === except) return;
+        card.classList.remove('active');
+        card.setAttribute('aria-expanded', 'false');
+      });
+    };
+
+    cards.forEach((card) => {
+      const toggle = (event) => {
+        event.stopPropagation();
+        const willOpen = !card.classList.contains('active');
+        closeAll(card);
+        card.classList.toggle('active', willOpen);
+        card.setAttribute('aria-expanded', String(willOpen));
+      };
+
+      card.addEventListener('click', toggle);
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggle(event);
+        }
+      });
+    });
+
+    document.addEventListener('click', () => closeAll());
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeAll();
+    });
+  }
+
   /* ---------- 社群二维码原图预览 ---------- */
   function initCommunityImagePreview() {
     const thumbnails = document.querySelectorAll('.community-card > img');
@@ -571,6 +669,7 @@
     initCursorGlow();
     initLiveConsole();
     initWechatHoverCards();
+    initOfficialAccountHover();
     initCommunityImagePreview();
     initQuickAccess();
   }
