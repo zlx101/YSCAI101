@@ -2513,6 +2513,47 @@ body.quick-access-open {
   line-height: 1.8;
 }
 
+.footer-nav h4 + a[href^="mailto:"],
+.footer-nav h4 + a[href^="mailto:"] + span,
+.footer-nav h4 + a[href^="mailto:"] + span + span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+}
+
+.footer-nav h4 + a[href^="mailto:"]::before,
+.footer-nav h4 + a[href^="mailto:"] + span::before,
+.footer-nav h4 + a[href^="mailto:"] + span + span::before {
+  display: inline-grid;
+  flex: 0 0 18px;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  font-size: 0.58rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.footer-nav h4 + a[href^="mailto:"]::before {
+  content: 'QQ';
+  background: #f0c35c;
+  color: #263f44;
+}
+
+.footer-nav h4 + a[href^="mailto:"] + span::before {
+  content: '微';
+  background: #2f7359;
+  color: #fffdf8;
+}
+
+.footer-nav h4 + a[href^="mailto:"] + span + span::before {
+  content: '⌖';
+  background: #f1e5d7;
+  color: #8a5935;
+}
+
 .lab-map-grid-three {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
