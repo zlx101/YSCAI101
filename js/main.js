@@ -482,10 +482,12 @@
     });
   }
 
-  /* ---------- 页脚公众号二维码 ---------- */
+  /* ---------- 公众号二维码 ---------- */
   function initOfficialAccountHover() {
-    const copyrightLines = document.querySelectorAll('.footer-bottom-stack > span:first-child');
-    if (copyrightLines.length === 0) return;
+    const accountLines = document.querySelectorAll(
+      '.footer-bottom-stack > span:first-child, .writing-side > p'
+    );
+    if (accountLines.length === 0) return;
 
     const cards = [];
 
@@ -522,7 +524,7 @@
       return wrapper;
     };
 
-    copyrightLines.forEach((line, index) => {
+    accountLines.forEach((line, index) => {
       if (line.querySelector('.official-account-hover')) return;
       const target = '成云杉';
       const walker = document.createTreeWalker(line, NodeFilter.SHOW_TEXT);
