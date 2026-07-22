@@ -21,14 +21,9 @@
         <a href="blog.html" class="active">写作</a>
         <a href="works.html">项目</a>
         <a href="about.html">关于</a>
-        <a href="resume.html">简历</a>
         <a href="contact.html">联系</a>
       </div>
-      <button class="nav-toggle" aria-label="菜单">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button class="nav-toggle" aria-label="菜单"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
@@ -37,12 +32,12 @@
     <a href="blog.html">写作</a>
     <a href="works.html">项目</a>
     <a href="about.html">关于</a>
-    <a href="resume.html">简历</a>
     <a href="contact.html">联系</a>
   </div>
 
   <header class="post-header container">
     <a href="blog.html" class="post-back">← 返回写作列表</a>
+    <p class="post-kicker">01 / AI PRACTICE</p>
     <h1>把 AI 放进真实工作流，而不是停留在工具收藏</h1>
     <div class="post-meta">
       <span>2026-04-10</span>
@@ -57,43 +52,71 @@
   </header>
 
   <div class="container">
-    <div class="post-cover">封面占位 / Workflow Notes</div>
+    <div class="post-cover post-cover-workflow">
+      <span>Workflow Notes</span>
+      <strong>工具不是答案，稳定产出才是。</strong>
+      <em>Research → Thinking → Drafting → Shipping</em>
+    </div>
   </div>
 
   <article class="post-content container">
-    <p>过去一段时间里，我一直在反复验证一件事：AI 真正的价值，不在于你收集了多少工具，而在于它有没有进入你真实的任务链路，并且持续产生结果。</p>
+    <p class="post-lead">过去一段时间里，我一直在反复验证一件事：AI 真正的价值，不在于你收藏了多少工具，而在于它有没有进入你真实的任务链路，并且持续产生结果。</p>
+
+    <div class="post-summary-card">
+      <span>核心判断</span>
+      <p>会用 AI，不是用过很多新工具；而是能把 AI 接进调研、构思、写作、交付和复盘的完整链路里，让每一轮输出都变得更快、更清楚、更可验证。</p>
+    </div>
 
     <h2>问题不在工具，而在工作流</h2>
 
-    <p>很多人接触 AI 的第一反应是找工具、试功能、比模型，然后很快就陷入一种“看起来很忙，但没有真正提效”的状态。因为真正阻碍结果的，往往不是缺少工具，而是没有一套清晰的工作流承接这些工具。</p>
+    <p>很多人接触 AI 的第一反应，是找工具、试功能、比模型。今天收藏一个提示词库，明天注册一个设计工具，后天又去试新的 Agent。看起来很忙，但过一阵子回头看，真正留下来的成果并不多。</p>
+
+    <p>原因往往不是工具不够强，而是没有一套清晰的工作流承接这些工具。目标模糊时，AI 只会让模糊变得更快；链路断裂时，AI 只会让断裂更频繁。</p>
 
     <blockquote>
       <p>AI 不是替代思考，它更像一个加速器。前提是你已经知道自己要加速什么。</p>
     </blockquote>
 
-    <p>如果目标模糊，AI 只会让模糊变得更快；如果链路断裂，AI 只会让断裂更频繁。所以我后面越来越少问“这个工具厉不厉害”，而更多问“它能插进我现有哪一步”。</p>
+    <p>所以我现在越来越少问“这个工具厉不厉害”，而是更多问：“它能插进我现有哪一步？它能省掉什么重复动作？它能不能让我更快拿到可用结果？”</p>
 
     <h2>我现在怎么用 AI</h2>
 
-    <h3>1. 调研阶段：用 AI 快速建立认知底稿</h3>
+    <h3>1. 调研阶段：快速建立认知底稿</h3>
 
-    <p>在调研阶段，我会先让 AI 帮我快速搭一个底稿，比如行业背景、竞品差异、用户关心的问题、内容方向列表。这样做的目的不是替代判断，而是节省大量零散搜集信息的时间。</p>
+    <p>在调研阶段，我会先让 AI 帮我搭一个底稿，比如行业背景、竞品差异、用户关心的问题、内容方向列表。它的作用不是替代判断，而是先把散落的信息整理成一个可以继续加工的结构。</p>
 
-    <div class="img-placeholder">调研结构图占位</div>
+    <p>这个阶段最重要的是提问质量。不要只问“帮我分析一下某某行业”，而是把场景、目标、人群和你已经知道的信息一起给进去。AI 给出的底稿越结构化，你后面人工判断的成本就越低。</p>
 
-    <h3>2. 构思阶段：用 AI 发散，再由我收拢</h3>
+    <div class="post-step-grid">
+      <div>
+        <span>输入</span>
+        <strong>背景资料、目标用户、已知问题</strong>
+      </div>
+      <div>
+        <span>处理</span>
+        <strong>拆解变量、补充角度、列出疑问</strong>
+      </div>
+      <div>
+        <span>输出</span>
+        <strong>可验证的调研提纲和判断清单</strong>
+      </div>
+    </div>
 
-    <p>构思阶段是 AI 最适合参与的部分。它非常适合快速发散，但不适合直接代替你下结论。我通常会先让它给出多个方向，然后再自己筛掉空泛和重复的部分。</p>
+    <h3>2. 构思阶段：让 AI 发散，再由我收拢</h3>
 
-    <ul>
-      <li>先生成多个表达角度，而不是只要一个答案</li>
-      <li>让 AI 分别模拟不同用户视角给出反馈</li>
-      <li>用它补充盲区，而不是决定最终方向</li>
+    <p>构思阶段是 AI 最适合参与的部分。它非常适合快速发散，但不适合直接替你下结论。我通常会让它给出多个方向，然后自己筛掉空泛、重复和不符合真实场景的部分。</p>
+
+    <ul class="post-checklist">
+      <li>先生成多个表达角度，而不是只要一个标准答案。</li>
+      <li>让 AI 分别模拟不同用户视角，补充可能被忽略的问题。</li>
+      <li>用它暴露盲区，而不是让它决定最终方向。</li>
     </ul>
+
+    <p>这一步的关键，是把 AI 当成“第二大脑的草稿区”，而不是“最终答案的发布器”。它可以帮你把可能性铺开，但真正要保留下来的东西，仍然要经过你的判断。</p>
 
     <h3>3. 写作与交付阶段：把重复劳动交给 AI</h3>
 
-    <p>到写作和交付这一步，AI 适合处理的是那些重复、结构化、容易标准化的工作。比如文章大纲、表达整理、格式输出、内容拆分和二次分发。</p>
+    <p>到写作和交付这一步，AI 适合处理重复、结构化、容易标准化的工作，比如文章大纲、表达整理、格式输出、内容拆分和二次分发。</p>
 
     <pre><code>const workflow = {
   research: '用 AI 建立初始信息底稿',
@@ -102,16 +125,18 @@
   publishing: '适配不同平台的二次输出'
 };</code></pre>
 
-    <p>这样一来，我的时间就更多留给最关键的部分：判断、取舍、结构设计和最后的品质把控。</p>
+    <p>这样一来，我的时间就更多留给最关键的部分：判断、取舍、结构设计和最后的品质把控。AI 负责把路铺得更快，人负责决定往哪里走。</p>
 
-    <h2>我真正高频使用的几类 AI 工具</h2>
+    <h2>真正高频使用的几类工具</h2>
 
-    <ol>
+    <ol class="post-number-list">
       <li><strong>对话模型</strong>：做拆解、整理、比较和结构发散。</li>
       <li><strong>写作辅助工具</strong>：做标题、框架、改写和多版本输出。</li>
       <li><strong>设计与视觉工具</strong>：快速生成参考视觉和方向草图。</li>
-      <li><strong>代码辅助工具</strong>：提升前端和自动化流程的迭代速度。</li>
+      <li><strong>代码辅助工具</strong>：提升前端、自动化流程和产品原型的迭代速度。</li>
     </ol>
+
+    <p>但我不会把工具清单看得太重。AI 工具会变，模型会变，价格会变，平台也会变。真正值得沉淀的是你对任务的拆解方式，以及你让工具进入任务链路的能力。</p>
 
     <h2>最后一个提醒</h2>
 
@@ -121,18 +146,18 @@
       <p>工具只是杠杆，真正决定结果的，仍然是你的判断、节奏和长期积累。</p>
     </blockquote>
 
-    <p>如果你也在尝试把 AI 接进自己的内容、产品或副业系统里，欢迎继续看我后面的文章。我会把这条路径拆得更细，也更具体。</p>
+    <p>如果你也在尝试把 AI 接进自己的内容、产品或副业系统里，可以先从一个小闭环开始：选一个具体任务，记录输入、过程、输出和复盘。只要这个闭环能跑起来，AI 就不再只是新鲜感，而会慢慢变成你的生产系统。</p>
   </article>
 
   <div class="container">
     <div class="post-nav">
-      <a href="blog-post.html" class="prev">
-        <span class="label">上一篇</span>
-        <span class="title">Prompt Engineering 实战指南</span>
+      <a href="blog.html" class="prev">
+        <span class="label">返回</span>
+        <span class="title">写作列表</span>
       </a>
-      <a href="blog-post.html" class="next">
+      <a href="about.html" class="next">
         <span class="label">下一篇</span>
-        <span class="title">2026 年内容型个人网站的结构趋势</span>
+        <span class="title">成云杉的第一版介绍</span>
       </a>
     </div>
   </div>
@@ -165,10 +190,14 @@
           <span>天津 · 支持远程</span>
         </div>
       </div>
-      <div class="footer-bottom footer-bottom-stack"><span>© 2026 成云杉 YSC. 保留所有权利。</span><span>由 @<a href="https://t.zsxq.com/VqloN" target="_blank" rel="noopener">成云杉·AI编程出海变现</a> 提供技术支持。</span></div>
+      <div class="footer-bottom footer-bottom-stack">
+        <span>© 2026 成云杉 YSC. 保留所有权利。</span>
+        <span>由 @<a href="https://t.zsxq.com/VqloN" target="_blank" rel="noopener">成云杉·AI编程出海变现</a> 提供技术支持。</span>
+      </div>
     </div>
   </footer>
 
+  <button class="back-to-top" aria-label="返回顶部">↑</button>
   <script src="js/main.js"></script>
 </body>
 </html>
